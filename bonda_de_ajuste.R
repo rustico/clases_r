@@ -22,6 +22,6 @@ observado <- c(32, 15, 9, 4)
 
 # Obtenemos la media = lambda para poder obtener poisson
 media <- sum(defectos*observado)/sum(observado)
-esperado <- ppois(defectos, media)
+esperado <- sum(observado)*ppois(defectos, media)
 
 chisq.test(observado, esperado)
