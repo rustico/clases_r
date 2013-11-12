@@ -1,9 +1,9 @@
-# Ejercicio 160 (con más cosas)
+# Ejercicio 160 (con mï¿½s cosas)
 
 x <- c(70, 63, 72, 68, 65, 67, 62, 65, 74, 70, 85, 80, 71, 54, 62, 50, 60, 66)
 y <- c(155, 150, 180, 152, 139, 145, 132, 160, 178, 168, 172, 170, 169, 150, 155, 133, 135, 156)
 
-#dibujar diagrama de disperción
+#dibujar diagrama de disperciï¿½n
 plot(x, y)
 
 #calcular el modelo lineal
@@ -11,10 +11,10 @@ ml <- lm(y ~ x)
 
 # Informacion sobre el modelo
 summary(ml)
-# correlación entre x e y
+# correlaciï¿½n entre x e y
 cor(x,y)
 
-# dibujar la línea entre los puntos
+# dibujar la lï¿½nea entre los puntos
 lines(x, ml$fitted.values, col="red")
 
 #calcular anova del modelo
@@ -37,3 +37,8 @@ yn <- y/10
 #calcular el modelo lineal nuevamente
 mln2 <- lm(yn ~ x)
 summary(mln2)
+
+# Calcular si los residuos son normales con jarque - bera
+install.packages("moments")
+library(moments)
+jarque.test(ml$residuals)
